@@ -2269,7 +2269,6 @@ mg_update_xtext (GtkWidget *wid)
 	GtkXText *xtext = GTK_XTEXT (wid);
 
 	gtk_xtext_set_palette (xtext, colors);
-	gtk_xtext_set_max_lines (xtext, prefs.hex_text_max_lines);
 	gtk_xtext_set_background (xtext, channelwin_pix);
 	gtk_xtext_set_wordwrap (xtext, prefs.hex_text_wordwrap);
 	gtk_xtext_set_show_marker (xtext, prefs.hex_text_show_marker);
@@ -2314,7 +2313,6 @@ mg_create_textarea (session *sess, GtkWidget *box)
 	gtk_xtext_set_max_indent (xtext, prefs.hex_text_max_indent);
 	gtk_xtext_set_thin_separator (xtext, prefs.hex_text_thin_sep);
 	gtk_xtext_set_urlcheck_function (xtext, mg_word_check);
-	gtk_xtext_set_max_lines (xtext, prefs.hex_text_max_lines);
 	gtk_container_add (GTK_CONTAINER (frame), GTK_WIDGET (xtext));
 
 	mg_update_xtext (GTK_WIDGET (xtext));

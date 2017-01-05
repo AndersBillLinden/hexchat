@@ -562,8 +562,7 @@ const struct prefs vars[] =
 	{"text_font_alternative", P_OFFSET (hex_text_font_alternative), TYPE_STR},
 	{"text_indent", P_OFFINT (hex_text_indent), TYPE_BOOL},
 	{"text_max_indent", P_OFFINT (hex_text_max_indent), TYPE_INT},
-	{"text_max_lines", P_OFFINT (hex_text_max_lines), TYPE_INT},
-	{"text_replay", P_OFFINT (hex_text_replay), TYPE_BOOL},
+    {"text_replay", P_OFFINT (hex_text_replay), TYPE_BOOL},
 	{"text_search_case_match", P_OFFINT (hex_text_search_case_match), TYPE_BOOL},
 	{"text_search_highlight_all", P_OFFINT (hex_text_search_highlight_all), TYPE_BOOL},
 	{"text_search_follow", P_OFFINT (hex_text_search_follow), TYPE_BOOL},
@@ -834,7 +833,6 @@ load_default_config(void)
 	prefs.hex_net_reconnect_delay = 10;
 	prefs.hex_notify_timeout = 15;
 	prefs.hex_text_max_indent = 256;
-	prefs.hex_text_max_lines = 500;
 	prefs.hex_url_grabber_limit = 100; 		/* 0 means unlimited */
 
 	/* STRINGS */

@@ -431,7 +431,6 @@ gtk_xtext_init (GtkXText * xtext)
 	xtext->io_tag = 0;
 	xtext->add_io_tag = 0;
 	xtext->scroll_tag = 0;
-	xtext->max_lines = 0;
 	xtext->col_back = XTEXT_BG;
 	xtext->col_fore = XTEXT_FG;
 	xtext->nc = 0;
@@ -4608,11 +4607,6 @@ gtk_xtext_append_entry (xtext_buffer *buf, textentry * ent, time_t stamp)
 		buf->marker_seen = FALSE;
 	}
 
-	if (buf->xtext->max_lines > 2 && buf->xtext->max_lines < buf->num_lines)
-	{
-		gtk_xtext_remove_top (buf);
-	}
-
 	if (buf->xtext->buffer == buf)
 	{
 		/* this could be improved */
@@ -4816,12 +4810,6 @@ void
 gtk_xtext_set_max_indent (GtkXText *xtext, int max_auto_indent)
 {
 	xtext->max_auto_indent = max_auto_indent;
-}
-
-void
-gtk_xtext_set_max_lines (GtkXText *xtext, int max_lines)
-{
-	xtext->max_lines = max_lines;
 }
 
 void

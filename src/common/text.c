@@ -107,7 +107,7 @@ scrollback_close (session *sess)
 	g_clear_object (&sess->scrollfile);
 }
 
-/* shrink the file to roughly prefs.hex_text_max_lines */
+/* shrink the file to roughly SCROLLBACK_MAX */
 
 static void
 scrollback_shrink (session *sess)
@@ -115,7 +115,7 @@ scrollback_shrink (session *sess)
 	char *buf, *p;
 	gsize len;
 	gint offset, lines = 0;
-	const gint max_lines = MIN(prefs.hex_text_max_lines, SCROLLBACK_MAX);
+    const gint max_lines = SCROLLBACK_MAX;
 
 	if (!g_file_load_contents (sess->scrollfile, NULL, &buf, &len, NULL, NULL))
 		return;
@@ -212,8 +212,7 @@ scrollback_save (session *sess, char *text, time_t stamp)
 
 	sess->scrollwritten++;
 
-	if ((sess->scrollwritten > prefs.hex_text_max_lines && prefs.hex_text_max_lines > 0) ||
-       sess->scrollwritten > SCROLLBACK_MAX)
+    if (sess->scrollwritten > SCROLLBACK_MAX)
 		scrollback_shrink (sess);
 }
 

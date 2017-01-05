@@ -160,8 +160,6 @@ struct _GtkXText
 	int select_end_x;
 	int select_end_y;
 
-	int max_lines;
-
 	int col_fore;
 	int col_back;
 
@@ -276,7 +274,6 @@ void gtk_xtext_foreach (xtext_buffer *buf, GtkXTextForeach func, void *data);
 void gtk_xtext_set_error_function (GtkXText *xtext, void (*error_function) (int));
 void gtk_xtext_set_indent (GtkXText *xtext, gboolean indent);
 void gtk_xtext_set_max_indent (GtkXText *xtext, int max_auto_indent);
-void gtk_xtext_set_max_lines (GtkXText *xtext, int max_lines);
 void gtk_xtext_set_show_marker (GtkXText *xtext, gboolean show_marker);
 void gtk_xtext_set_show_separator (GtkXText *xtext, gboolean show_separator);
 void gtk_xtext_set_thin_separator (GtkXText *xtext, gboolean thin_separator);
